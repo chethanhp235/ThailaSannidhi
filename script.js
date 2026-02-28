@@ -73,3 +73,24 @@ document.addEventListener("DOMContentLoaded", function () {
   startAuto();
 
 });
+
+
+const carousel = document.querySelector(".carousel");
+
+let startX = 0;
+
+carousel.addEventListener("touchstart", function (e) {
+  startX = e.touches[0].clientX;
+}, { passive: true });
+
+carousel.addEventListener("touchmove", function (e) {
+  let currentX = e.touches[0].clientX;
+  let diff = currentX - startX;
+
+  if (Math.abs(diff) > 50) {
+    e.preventDefault();
+  }
+}, { passive: false });
+
+
+
