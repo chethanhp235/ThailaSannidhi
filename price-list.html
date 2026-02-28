@@ -8,19 +8,24 @@
 
 <body>
 
-<header>
+<header class="main-header">
+
   <div class="logo">
     <img src="assets/images/logo.jpeg" alt="Thaila Sannidhi Logo">
-    Thaila Sannidhi
+    <span>Thaila Sannidhi</span>
   </div>
 
-  <nav>
-    <a href="index.html">Dashboard</a>
-    <a href="price-list.html">Price List</a>
-    <a href="about.html">About Us</a>
-    <a href="contact.html">Contact Us</a>
+  <div class="menu-toggle" id="menuToggle">
+    ☰
+  </div>
 
+  <nav id="navMenu" class="nav-links">
+    <a href="./index.html">Dashboard</a>
+    <a href="./price-list.html">Price List</a>
+    <a href="./about.html">About Us</a>
+    <a href="./contact.html">Contact Us</a>
   </nav>
+
 </header>
 
 <section class="price-section">
@@ -38,6 +43,26 @@
 <footer>
   <p>Thaila Sannidhi@Mathikere | Designed By Umesh KB</p>
 </footer>
+
+
+
+<script>
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+
+menuToggle.addEventListener("click", () => {
+  navMenu.classList.toggle("active");
+});
+
+document.querySelectorAll("#navMenu a").forEach(link => {
+  link.addEventListener("click", () => {
+    navMenu.classList.remove("active");
+  });
+});
+</script>
+
+
+
 
 </body>
 </html>
