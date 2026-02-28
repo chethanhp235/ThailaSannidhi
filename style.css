@@ -168,7 +168,7 @@ body {
   display: block;
 }
 
-IMAGE FIX
+
 .slide img {
   width: 100%;
     height: auto;         /* Desktop height */
@@ -178,13 +178,19 @@ IMAGE FIX
 
 /* Mobile Fix */
 @media (max-width: 768px) {
+
   .slide img {
-    aspect-ratio: auto;     /* remove forced ratio */
-    height: auto;           /* allow natural height */
-    object-fit: contain;    /* show full image */
+    width: 100%;
+    height: auto;        /* allow natural height */
+    object-fit: contain; /* show full image */
+  }
+
+  .carousel,
+  .slides,
+  .slide {
+    height: auto !important;  /* VERY IMPORTANT */
   }
 }
-
 /* ARROWS */
 .prev, .next {
   position: absolute;
