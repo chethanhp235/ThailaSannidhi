@@ -168,7 +168,7 @@ body {
   display: block;
 }
 
-/* IMAGE FIX */
+IMAGE FIX
 .slide img {
   width: 100%;
     height: auto;         /* Desktop height */
@@ -176,10 +176,12 @@ body {
   display: block;
 }
 
-/* MOBILE HEIGHT FIX */
+/* Mobile Fix */
 @media (max-width: 768px) {
   .slide img {
-    height: 220px;        /* Mobile height */
+    aspect-ratio: auto;     /* remove forced ratio */
+    height: auto;           /* allow natural height */
+    object-fit: contain;    /* show full image */
   }
 }
 
