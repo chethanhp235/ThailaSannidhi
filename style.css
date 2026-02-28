@@ -30,6 +30,7 @@ body {
   background: #000;
   color: #fff;
   position: relative;
+    z-index: 10000;
 }
 
 .logo {
@@ -77,13 +78,16 @@ body {
     font-size: 16px;
   }
 
+  /* ================= MOBILE NAV FIX ================= */
+@media (max-width: 768px) {
+
   .menu-toggle {
     display: block;
   }
 
   .nav-links {
     position: absolute;
-    top: 100%;
+    top: 60px;
     left: 0;
     width: 100%;
     background: #000;
@@ -91,12 +95,13 @@ body {
     align-items: center;
     display: none;
     padding: 10px 0;
-    border-top: 1px solid #222;
+    z-index: 9999;   /* VERY IMPORTANT */
   }
 
   .nav-links a {
+    display: block;
     width: 100%;
-    padding: 12px 0;
+    padding: 15px 0;
     text-align: center;
     border-bottom: 1px solid #222;
   }
@@ -104,6 +109,7 @@ body {
   .nav-links.active {
     display: flex;
   }
+}
 }
 /* ANNOUNCEMENT */
 .announcement-bar {
@@ -143,10 +149,8 @@ body {
 }
 
 .carousel {
-  width: 100%;
   position: relative;
-  overflow: hidden;
-  background: #000;
+  z-index: 1;
 }
 
 /* FIX HEIGHT CONTROL */
